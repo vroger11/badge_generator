@@ -1,0 +1,11 @@
+%%
+%% ticket for "ICLR 2017"
+%% pre-cutted label for wide files
+%%
+\unitlength=1mm
+%% tested for an HP5SiMX, adjust it for your printer
+\hoffset=-16.2mm
+\voffset=-6.6mm
+\ticketNumbers{2}{5}
+\ticketSize{70}{50.8}     % in unitlength
+\ticketDistance{0}{0}    % in unitlength
