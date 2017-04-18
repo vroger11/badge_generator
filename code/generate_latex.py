@@ -11,15 +11,16 @@ def write_latex_file(filename_out, conf_name, subtitle, logo_path, date, filenam
         latex_file.write("\\usepackage{graphicx}\n\n")
         latex_file.write("% make default ticket\n")
         latex_file.write("\\renewcommand{\\ticketdefault}{%\n")
-        latex_file.write("  \\put(50,  3){\\includegraphics[width=15mm]{" + logo_path + "}}\n")
-        latex_file.write("  \\put( 5, 13){\\line(1,0){60}}\n")
+        latex_file.write("  \\put(70,  3){\\includegraphics[width=15mm]{" + logo_path + "}}\n")
+        latex_file.write("  \\put( 5, 13){\\line(1,0){75}}\n")
         latex_file.write("  \\put( 7, 10){\\scriptsize " + conf_name + "}\n")
         latex_file.write("  \\put( 7,  7){\\scriptsize " + subtitle + "}\n")
         latex_file.write("  \\put( 7,  4){\\scriptsize " + date + "}\n")
         latex_file.write("}\n\n")
 
         latex_file.write("% now what do you like to put in your ticket\n")
-        latex_file.write("\\newcommand{\confpin}[2]{\\ticket{%\n")
+        latex_file.write("\\newcommand{\confpin}[3]{\\ticket{%\n")
+        latex_file.write("\put(75,42){#3}\n")
         latex_file.write("\\put(3,35){\\fbox{\\parbox[b][4em][t]{0.50\\linewidth}{\\vfill\\centering\\bfseries\\Large #1}}}\n")
         latex_file.write("\\put(3,16){\\fbox{\\parbox[b][4em][t]{0.50\\linewidth}{\\centering\\bfseries\large #2}}}\n")
         latex_file.write("}}\n\n")
@@ -29,9 +30,11 @@ def write_latex_file(filename_out, conf_name, subtitle, logo_path, date, filenam
         latex_file.write("\\sffamily\n")
         # add members
         with open(filename_members, "r") as csv_members:
+            i=1
             for line in csv_members.readlines():
                 firstname, lastname, organization = line.rstrip().replace("&", "\&").split(';')
-                latex_file.write("\\confpin{" + firstname + " " + lastname + "}{" + organization +"}\n")
+                latex_file.write("\\confpin{" + firstname + " " + lastname + "}{" + organization +"}{" + str(i) + "}\n")
+                i += 1
 
         latex_file.write("\\end{document}\n")
 
