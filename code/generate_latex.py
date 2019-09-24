@@ -21,8 +21,8 @@ def write_latex_file(filename_out, conf_name, subtitle, logo_path, date, filenam
         latex_file.write("% now what do you like to put in your ticket\n")
         latex_file.write("\\newcommand{\confpin}[3]{\\ticket{%\n")
         latex_file.write("\put(75,42){#3}\n")
-        latex_file.write("\\put(3,35){\\fbox{\\parbox[b][4em][t]{0.50\\linewidth}{\\vfill\\centering\\bfseries\\Large #1}}}\n")
-        latex_file.write("\\put(3,16){\\fbox{\\parbox[b][4em][t]{0.50\\linewidth}{\\centering\\bfseries\large #2}}}\n")
+        latex_file.write("\\put(3,35){\\parbox[b][4em][t]{0.50\\linewidth}{\\vfill\\centering\\bfseries\\Large #1}}\n")
+        latex_file.write("\\put(3,16){\\parbox[b][4em][t]{0.50\\linewidth}{\\centering\\bfseries\large #2}}\n")
         latex_file.write("}}\n\n")
 
 
