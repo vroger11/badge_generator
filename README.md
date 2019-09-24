@@ -16,7 +16,7 @@ Positional arguments:
   conf_name:        Conference name
   subtitle:         Conference subtitle
   csv_participant:  CSV of participants. Format:
-                   `<Name>;<Lastname>;<institution>`
+                    <Name>;<Lastname>;<Institution>
   date:             Conference date
   filename_out:     Conference name
 
