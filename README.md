@@ -27,7 +27,7 @@ Optional arguments:
 ## Example:
 
 ```bash
-python code/generate_latex.py example/conf_logo.png "Awesome Conference" "In dreamland" example/list_of_participants.csv "1st october 2019" badges.tex
+python badge_generator/generate_latex.py example/conf_logo.png "Awesome Conference" "In dreamland" example/list_of_participants.csv "1st october 2019" badges.tex
 ```
 
 This generate the badges.tex file.
